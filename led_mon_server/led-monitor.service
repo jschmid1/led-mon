@@ -1,0 +1,15 @@
+[Unit]
+Description=LED-Monitor (Server)
+After=syslog.target
+
+[Service]
+Type=simple
+WorkingDirectory=/etc/led_mon/
+ExecStart=/etc/led_mon/server.py
+SyslogIdentifier=led-monitor
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
+
